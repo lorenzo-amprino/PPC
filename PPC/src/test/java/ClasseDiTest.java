@@ -1,9 +1,11 @@
 import java.Puzzle;
 import java.io.FileNotFoundException;
 
+import org.junit.Test;
+
 import util.leggiFile.FileManagerUtil;
 
-public class Test {
+public class ClasseDiTest {
 	
 	@Test
 	void testa(){
