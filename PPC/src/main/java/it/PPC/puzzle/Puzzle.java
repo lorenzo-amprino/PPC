@@ -1,6 +1,10 @@
-package java;
+package it.PPC.puzzle;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class Puzzle {
 
@@ -9,6 +13,10 @@ public class Puzzle {
 	private List<String> paroleUsate;
 	private String chiave;
 	private String nome;
+
+	public Puzzle() {
+		this.listaParole = new ArrayList<String>();
+	}
 
 	public char[][] getSchema() {
 		return schema;
@@ -50,5 +58,4 @@ public class Puzzle {
 		this.nome = nome;
 	}
 
-	
 }
