@@ -18,6 +18,49 @@ public class Puzzle {
 		this.listaParole = new ArrayList<String>();
 	}
 
+	public Puzzle(int row, int col) {
+		this.listaParole = new ArrayList<String>();
+		this.schema = new char[row][col];
+		setupSchema(schema);
+
+	}
+
+	// methods
+
+	/**
+	 * Metodo che riempie lo schema di caratteri di default '.'. 
+	 * Viene chiamato all'interno del costruttore per inizializzare lo schema.
+	 * 
+	 * @param schema
+	 * @author Lorenzo
+	 */
+	private void setupSchema(char[][] schema) {
+		for (int i = 0; i < schema.length; i++) {
+			for (int j = 0; j < schema[i].length; j++) {
+				schema[i][j] = '.';
+			}
+		}
+	}
+
+	/**
+	 * Metodo che stampa in console lo schema lettera per lettera.
+	 * 
+	 * @author Lorenzo
+	 */
+	public void printSchema() {
+		for (int i = 0; i < schema.length; i++) {
+			for (int j = 0; j < schema[i].length; j++) {
+				if (j == schema[i].length - 1) {
+					System.out.println(schema[i][j]);
+				} else {
+					System.out.print(schema[i][j]);
+				}
+			}
+		}
+	}
+
+	// getter and setter
+
 	public char[][] getSchema() {
 		return schema;
 	}
