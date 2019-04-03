@@ -1,9 +1,15 @@
 
 <html>
 <head>
+<link rel="stylesheet" href="styles/puzzleStyle.css">
+<link rel="stylesheet" href="styles/lib/bootstrap.min.css">
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script type="text/javascript" src="scripts/app.js"></script>
 <script type="text/javascript" src="scripts/controller.js"></script>
+<script type="text/javascript" src="scripts/puzzleController.js"></script>
+<script type="text/javascript" src="scripts/lib/jquery-3.3.1.min.js"></script>
+
 </head>
 <body>
 	<div data-ng-app="ppc" ng-controller="controller">
@@ -11,6 +17,8 @@
 		<h2>{{intestazione}}</h2>
 
 		<input type="button" value="Click me" ng-click="cambiaMessaggio()">
+		
+		<div data-ng-include="'pages/puzzle.html'"></div>
 	</div>
 </body>
 </html>

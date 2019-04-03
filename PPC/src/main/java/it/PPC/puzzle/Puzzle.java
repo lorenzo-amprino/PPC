@@ -1,6 +1,7 @@
 package it.PPC.puzzle;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -58,6 +59,24 @@ public class Puzzle {
 			}
 		}
 	}
+	
+	/**
+	 * Metodo che restituisce il numero di spazi vuoti nello schema.
+	 * 
+	 * @return int
+	 * @author Lorenzo
+	 */
+	public int retriveEmptySpaces() {
+		int counter = 0;
+		for(int i = 0; i < schema.length; i++) {
+			for(int j = 0 ; j < schema[i].length; j++) {
+				if(schema[i][j] == '.') {
+					counter ++;
+				}
+			}
+		}
+		return counter;
+	}
 
 	// getter and setter
 
@@ -101,4 +120,11 @@ public class Puzzle {
 		this.nome = nome;
 	}
 
+	@Override
+	public String toString() {
+		return "Puzzle [schema=" + Arrays.toString(schema) + ", listaParole=" + listaParole + ", paroleUsate="
+				+ paroleUsate + ", chiave=" + chiave + ", nome=" + nome + "]";
+	}
+
+	
 }
