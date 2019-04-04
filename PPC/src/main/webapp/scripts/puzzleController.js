@@ -33,6 +33,14 @@ app.controller('puzzleController', function($scope, $http) {
 	}
 	
 	$scope.retriveWordList();
+	
+	$scope.indexCol;
+	$scope.indexRow;
+	
+	$scope.showIndex = function(indexRow, indexCol){
+		$scope.indexCol = indexCol + '';
+		$scope.indexRow = indexRow + '';
+	}
 
 	$(document).ready(function(){
 		$('table tbody tr td').on('hover', function () {

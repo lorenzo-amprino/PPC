@@ -1,26 +1,35 @@
-<div data-ng-controller="puzzleController">
-	<div>
-		<input type="number" ng-model="rows"> numero di righe</br>
-		<input type="number" ng-model="cols"> numero di colonne
-	</div>
-	<div>
-		<input type="button" value="crea puzzle" ng-click="createPuzzle()">
-	</div>
-	
-<!-- 	<div>
+<div data-ng-controller="puzzleController" class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+			<div>
+				<input type="number" ng-model="rows"> numero di righe</br> <input
+					type="number" ng-model="cols"> numero di colonne
+			</div>
+			<div>
+				<input type="button" value="crea puzzle" ng-click="createPuzzle()">
+			</div>
+
+			{{indexRow || 'riga'}} - {{indexCol || 'colonna'}}
+		</div>
+		<!-- 	<div>
 		<div ng-repeat="row in puzzle track by $index">
 			<span ng-repeat="col in row track by $index">{{col}}</span>
 		</div>
 	</div>
 	 -->
-	<table class="table-bordered table-dark">
-		<tbody>
-			<tr ng-repeat="row in puzzle track by $index">
-				<td ng-repeat="col in row track by $index">{{col}}</td>
-			</tr>
-		</tbody>
-	</table>
-	
+		<div class="col-md-8">
+			<table class="table-bordered table-dark">
+				<tbody>
+					<tr ng-repeat="row in puzzle track by $index"
+						ng-init="rowIndex = $index">
+						<td ng-repeat="col in row track by $index"
+							ng-init="colIndex = $index" style="width: 24px;"
+							class="text-center" ng-click="showIndex(rowIndex, colIndex)">{{col}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 	<div ng-repeat="word in wordList">
 		<span>{{word}}</span>
 	</div>
